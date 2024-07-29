@@ -8,7 +8,7 @@ function insertar(){
     formElement.onsubmit = async (e) =>{
         e.preventDefault()
         let formData =  new FormData(formElement);
-        let url = "http://localhost/gestor_imagen/gestor_img/backend/controller/imagen.php?fun=insertar";
+        let url = "http://localhost/actImagen/gestorimagen/backend/controller/imagen.php?fun=insertar";
 
         let config = {
             method: 'POST',

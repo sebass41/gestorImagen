@@ -17,11 +17,11 @@ class imagen{
         $nomImg = $img['name'];
         $extencion = pathinfo($nomImg, PATHINFO_EXTENSION);
         $sql = "INSERT INTO imagen(nombre, extencion) VALUES('$nombre', '$extencion')";
-        $connection->query($sql);
+        $respuesta = $connection->query($sql);
         $id = $connection->insert_id;
         $rutaTemp = $img['tmp_name'];
         move_uploaded_file($rutaTemp, "../img/$id.$extencion");
-
+        return $respuesta;
     }
 }
 

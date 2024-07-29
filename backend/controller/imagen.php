@@ -21,8 +21,11 @@ function insertar(){
 }
 
 function obtener(){
-    $result = (new imagen())->obtener();
-    echo json_encode($result);
+    if (session_status() == 0){
+        $result = (new imagen())->obtener();
+        echo json_encode($result);
+    }
+    
 }
 
 ?>
