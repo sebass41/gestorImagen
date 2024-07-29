@@ -21,9 +21,11 @@ function insertar(){
 }
 
 function obtener(){
-    if (session_status() == 0){
+    if (isset($_SESSION)){
         $result = (new imagen())->obtener();
         echo json_encode($result);
+    }else{
+        echo "false";
     }
     
 }

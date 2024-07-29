@@ -1,5 +1,6 @@
 window.onload = ()=>{
     insertar();
+    cerrarSesion();
 }
 
 function insertar(){
@@ -20,4 +21,16 @@ function insertar(){
         console.log(datos);
         
 }
+}
+
+function cerrarSesion(){
+    let btnCerrarSesoin = document.querySelector("#logout");
+
+    btnCerrarSesoin.addEventListener('click', ()=>{
+        localStorage.removeItem("usuario");
+
+        console.log("Se cerró la sesion");
+    });
+
+    console.log("si funciona")
 }

@@ -7,8 +7,11 @@ async function obtenerImg(){
     
     let consulta = await fetch(url);
     let datos = await consulta.json();
-    console.log(datos)
-    mostrarImg(datos);
+    if (datos != "false"){
+        mostrarImg(datos);
+    }else{
+        window.location.href = "http://localhost/actImagen/gestorimagen"
+    }
 }
 
 function mostrarImg(datos){
