@@ -14,14 +14,19 @@ switch ($funcion){
 }
 
 function insertar(){
-    $nombre = $_POST['nombre'];
-    $img = $_FILES['img'];
-    $result = (new imagen())->insertar($nombre, $img);
-    echo json_encode($result);
+    if(isset($_SESSION['usr'])){
+        $nombre = $_POST['nombre'];
+        $img = $_FILES['img'];
+        $result = (new imagen())->insertar($nombre, $img);
+        echo json_encode($result);
+    }else{
+        echo "false";
+    }
+    
 }
 
 function obtener(){
-    if (isset($_SESSION)){
+    if (isset($_SESSION['usr'])){
         $result = (new imagen())->obtener();
         echo json_encode($result);
     }else{
