@@ -3,7 +3,7 @@ window.onload = ()=>{
 }
 
 async function obtenerImg(){
-    let url = "http://localhost/actImagen/gestorimagen/backend/controller/imagen.php?fun=obtener"
+    let url = "http://localhost/actImagen/gestorimagen/backend/controller/imagen.php?fun=obtener";
     
     let consulta = await fetch(url);
     let datos = await consulta.json();

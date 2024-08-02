@@ -25,12 +25,12 @@ function insertar(){
 
 function cerrarSesion(){
     let btnCerrarSesoin = document.querySelector("#logout");
-
+    console.log("funciona");
     btnCerrarSesoin.addEventListener('click', ()=>{
         localStorage.removeItem("usuario");
 
         console.log("Se cerró la sesion");
     });
 
-    console.log("si funciona")
+    console.log("si funciona");
 }
