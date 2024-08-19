@@ -1,16 +1,17 @@
 window.onload = ()=>{
     obtenerImg();
+
 }
 
 async function obtenerImg(){
-    let url = "http://localhost/actImagen/gestorimagen/backend/controller/imagen.php?fun=obtener";
+    let url = "http://localhost/gestorImagen/backend/controller/imagen.php?fun=obtener";
     
     let consulta = await fetch(url);
     let datos = await consulta.json();
     if (datos != "false"){
         mostrarImg(datos);
     }else{
-        window.location.href = "http://localhost/actImagen/gestorimagen"
+        window.location.href = "http://localhost/gestorimagen";
     }
 }
 
@@ -24,5 +25,9 @@ function mostrarImg(datos){
             <p>${element.nombre}</p>
         `
     });
+}
 
+function cerrarSesion(){
+    localStorage.removeItem("usuario");
+    window.location.href = "http://localhost/gestorImagen";
 }

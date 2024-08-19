@@ -1,11 +1,8 @@
 window.onload = ()=>{
-    let usuario = [];
-    usuario = JSON.parse(window.localStorage.getItem("usuario"));
-    console.log(usuario);
-    if (usuario == null){
+    if (window.localStorage.getItem("usuario") == null){
         ingresar();
     }else{
-        window.location.href = "http://localhost/actImagen/gestorImagen/frontend/page/mostrar/mostrar.html";
+        window.location.href = "http://localhost/gestorImagen/frontend/page/mostrar/mostrar.html";
     }
 }
 
@@ -25,8 +22,7 @@ async function ingresar(){
         let respuesta = await fetch(url, config);
         let datos = await respuesta.json();
         
-        if (datos != "false"){
-            console.log(datos);
+        if (datos != 0){
             guardarSesion(datos);
             window.location.href = "http://localhost/gestorImagen/frontend/page/mostrar/mostrar.html";
         }else{
@@ -38,5 +34,6 @@ async function ingresar(){
 
 
 function guardarSesion(usuario){
+    console.log("guardar Usuario");
     window.localStorage.setItem("usuario", JSON.stringify(usuario));
 }

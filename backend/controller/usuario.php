@@ -30,7 +30,7 @@ function login(){
         $_SESSION['pass'] = $pass;
         echo json_encode($result);
     }else{
-        echo json_encode($result);
+        echo json_encode(count($result));
     }
 }
 ?>

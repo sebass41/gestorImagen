@@ -14,6 +14,7 @@ switch ($funcion){
 }
 
 function insertar(){
+    session_start();
     if(isset($_SESSION['usr'])){
         $nombre = $_POST['nombre'];
         $img = $_FILES['img'];
@@ -26,6 +27,7 @@ function insertar(){
 }
 
 function obtener(){
+    session_start();
     if (isset($_SESSION['usr'])){
         $result = (new imagen())->obtener();
         echo json_encode($result);
